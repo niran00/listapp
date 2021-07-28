@@ -44,7 +44,7 @@ app.get("/about", function(req, res){
     res.render("about");
 })
 
-app.listen(2222, function()
+app.listen(process.env.PORT || 3000, function()
 {
-    console.log('In port 2222'); 
+    console.log('In port 3000'); 
 });
