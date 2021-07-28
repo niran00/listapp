@@ -2,6 +2,9 @@ const express = require('express');
 
 const app = express(); 
 
+const date = require(__dirname + '/date.js');
+
+
 var items = ["Buy Food", "Cook Food", "Eat Food"];
 var workItems = [];
 
@@ -12,19 +15,7 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res)
 {
-
-    var today = new Date();
-    var currentDay = today.getDay();
-    var day = ""; 
-
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        year: "numeric",
-        month: "long"
-    };
-
-    var day = today.toLocaleDateString("en-US", options);
+    let day = date.getDate();    
 
     res.render('list', {listTitle: day, newListItems: items});
         
