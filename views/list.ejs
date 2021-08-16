@@ -4,22 +4,29 @@
     <div id="heading" class="box">
 
         <% if(listTitle === "Saturday" || listTitle === "Saturday") { %>
-            <h1 style="color: Green;">It's a <%= listTitle %> </h1>
+            <h1 style="color: Green;"> <%= listTitle %> </h1>
           <% } else { %>
-              <h1 style="color: white;">It's a <%= listTitle %> </h1>
+              <h1 style="color: white;"> <%= listTitle %> </h1>
           <% } %>   
 
     </div>
 
     <div class="box">
 
+        <% newListItems.forEach(function(item){ %>
+
+            <form class="item" action="/delete" method="post">
+                 <div class="item">
+                    <input onchange="this.form.submit();" value="<%=item._id %>" name="checkbox" type="checkbox">
+                    <p><%= item.name %></p>
+                 </div>   
+                 <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+            </form>       
+
+
+        <%  }) %>
        
-            <% for ( var i=0; i<newListItems.length; i++ ){ %>
-            <div class="item">
-                <input type="checkbox">
-               <p><%= newListItems[i] %></p>
-            </div>   
-            <% } %>
+           
        
 
         <form class="item" action="/" method="post" >

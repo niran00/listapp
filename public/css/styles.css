@@ -51,8 +51,8 @@ p {
   color: #00204a;
 }
 
-form {
-  text-align: center;
+form.item {
+  text-align: start;
   margin-left: 20px;
 }
 
@@ -69,7 +69,7 @@ button {
 }
 
 input[type="text"] {
-  text-align: center;
+  text-align: left;
   height: 60px;
   top: 10px;
   border: none;
