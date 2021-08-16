@@ -24,7 +24,7 @@ const Item = mongoose.model('Item', itemsSchema);
 
 const item1 = new Item({ name: "Welcome to to do List"}); 
 const item2 = new Item({ name: "Press + button to add a new item"}); 
-const item3 = new Item({ name: "<-- Check this box to delete"}); 
+const item3 = new Item({ name: "← Check this box to delete"}); 
 
 const defaultItems = [item1, item2, item3];
 
